@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - _5._1EFStackOverflow</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/_5._1EFStackOverflow.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("styles", false)
+</head>
+<body>
+    <header>
+        <nav b-k8y6yzo0ym class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark border-bottom box-shadow">
+            <div b-k8y6yzo0ym class="container">
+                <a class="navbar-brand" href="/">QASite</a>
+                <button b-k8y6yzo0ym class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span b-k8y6yzo0ym class="navbar-toggler-icon"></span>
+                </button>
+                <div b-k8y6yzo0ym class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul b-k8y6yzo0ym class="navbar-nav flex-grow-1">
+                        <li b-k8y6yzo0ym class="nav-item">
+                            <a class="nav-link text-light" href="/">Home</a>
+                        </li>
+                        <li b-k8y6yzo0ym><a class="nav-link text-light" href="/Questions/AskAQuestion">Ask a Question</a></li>
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <li b-k8y6yzo0ym><a class="nav-link text-light" href="/Account/Logout">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li b-k8y6yzo0ym><a class="nav-link text-light" href="/Account/Login">Login</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
